@@ -40,11 +40,18 @@ public class Progress implements Comparator<Progress> {
 1. Добавляем до переменную middleGradeValue
 2. В геттере вызываем функцию middleGrade*/
 
+
     public int compare(Progress o1, Progress o2) {//сравнить средние баллы
         double value1 = o1.middleGrade(o1);
         double value2 = o2.middleGrade(o2);
-       return o1.getMiddleGradeValue().
-    }
+        if (value1 < value2) {
+            return -1;
+        } else if (value1 > value2) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }//если compare сравнивает поля не с одного класса, то прописываем его руками
     public Student getStudent() {
         return student;
     }
